@@ -1,0 +1,29 @@
+{% extends 'authorisation/layout-authorisation.html' %}
+{% load static %}
+
+{%block header %}
+{% filter upper%}вход{% endfilter %}
+{% endblock %}
+
+{% block form %}
+  <div class="container">
+    <form method="post" class="login__menu">
+      {% csrf_token %}
+      {% for value in values %}
+        {% if value == "email" %}
+            <input type="email" class="login__input" placeholder="{{ value }}" required>
+        {% elif value == "weight" or value == "height" %}
+            <input type="number" class="login__input" placeholder="{{ value }}" required>
+        {% elif value == "password" or value == "repeat the password" %}
+            <input type="password" class="login__input" placeholder="{{ value }}" required>
+        {% elif value == "login" %}
+            <input type="text" class="login__input" placeholder="{{ value }}">
+        {% endif %}
+      {% endfor %}
+      <button class="login__button" type="submit">{% filter upper%}вход{% endfilter %}</button>
+    </form>
+  </div>
+  <a href="{% url 'registration' %}" class="footer__link">создать аккаунт</a>
+{% endblock %}
+
+

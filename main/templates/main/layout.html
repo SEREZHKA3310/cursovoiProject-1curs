@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Capyzal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="тренинг, спорт, спортзал, физкультура, тренинг">
+    <meta name="description" content="Лучший планировщик для ваших фитнес-тренировок">
+    <meta property="og:title" content="Capyzal">
+    <meta property="og:url" content="https://capyzal.onrender.com">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Лучший планировщик для ваших фитнес-тренировок">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Hydrochoeris_hydrochaeris_in_Brazil_in_Petr%C3%B3polis%2C_Rio_de_Janeiro%2C_Brazil_09.jpg/640px-Hydrochoeris_hydrochaeris_in_Brazil_in_Petr%C3%B3polis%2C_Rio_de_Janeiro%2C_Brazil_09.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <link rel="preload" href="resize.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="{% static 'main/css/resize.css' %}">
+    <link rel="stylesheet"{% block link-css %} {% endblock %} >
+    <link rel="shortcut icon" href="{% static 'main/img/favicon.ico' %}" type="image/ico">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper wrapper">
+        <span>{% filter upper%}<a href="{% url 'main' %}">capyzal</a>{% endfilter %}</span>
+        <div class="header__menu">
+          <a href="{% url 'authorisation' %}">
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.0404 20V14.1897C17.0404 13.9568 17.0824 13.7257 17.1647 13.506L19.9249 6.13768C20.1453 5.5495 19.8663 4.89878 19.2741 4.61983C18.6377 4.32002 17.8636 4.55251 17.5288 5.14403L13.7702 11.7838M3.95958 20V14.1897C3.95958 13.9568 3.91751 13.7257 3.83532 13.506L1.07504 6.13768C0.854738 5.5495 1.13369 4.89878 1.72592 4.61983C2.3623 4.32002 3.13636 4.55251 3.47123 5.14403L7.22979 11.7838M6.13972 5.10811C6.13972 7.37695 8.09193 9.21622 10.5 9.21622C12.9081 9.21622 14.8603 7.37695 14.8603 5.10811C14.8603 2.83926 12.9081 1 10.5 1C8.09193 1 6.13972 2.83926 6.13972 5.10811Z" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <ul class="header__burger">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      {% block main-content %}
+
+      {% endblock %}
+    </main>
+    <footer class="footer">
+      <div class="footer__wrapper wrapper">
+        <h2 class="footer__title">CAPYZAL</h2>
+        <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 8.39597L6.07362 10.7383L8.09816 17.302L11.8571 14.3691L18.2951 19L22 0L0 8.39597ZM9.52883 11.6174L8.5638 14.8591L7.28834 10.3154L17.411 3.78523L9.52883 11.6174Z" fill="white"/>
+        </svg>
+        <span>&#169; copyright, 2025</span>
+      </div>
+    </footer>
+  </body>
+</html>

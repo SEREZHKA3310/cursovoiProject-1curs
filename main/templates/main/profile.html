@@ -1,0 +1,42 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block link-css %}
+href="{% static 'main/css/style-profile.css' %}"
+{% endblock %}
+
+{% block main-content %}
+<section class="personal">
+  <div class="personal__wrapper wrapper">
+    <h1 class="personal__title title">личный кабинет</h1>
+    <div class="personal__circle"></div>
+    <div class="personal__name">Имя</div>
+    <div class="personal__data">id | Дата регистрации</div>
+  </div>
+</section>
+<section class="calendar">
+  <div class="calendar__wrapper wrapper">
+    <h2 class="calendar__title title">календарь</h2>
+    <table class="calendar__table">
+      <tr class="calendar__row">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr class="calendar__row">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr class="calendar__row">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr class="calendar__row">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr class="calendar__row">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr class="calendar__row">
+        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+    </table>
+  </div>
+</section>
+{% endblock %}
